@@ -58,6 +58,7 @@ const char* FailSafeClass::toString () {
     case RUNNING:
         return "RUNNING";
     }
+    return "";
 }
 
 #if defined ESP8266 && !USE_SPIFFS

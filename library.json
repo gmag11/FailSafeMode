@@ -18,13 +18,6 @@
     },
   "examples": "examples/*/*.ino",
   "license": "GPL-3.0-or-later",
-  "export":
-    {
-      "exclude":
-      [
-		"examples/*"
-      ]
-    },
-    "dependencies": []
+  "dependencies": []
 }
 

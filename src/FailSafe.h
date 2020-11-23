@@ -42,7 +42,7 @@ const char* extractFileName (const char* path);
 #define DEFAULT_LOG_TAG "FailSafe"
 #define fsDebug(format,...) ESP_LOGW (DEFAULT_LOG_TAG,"%d Heap: %6d. " format, millis(), ESP.getFreeHeap(), ##__VA_ARGS__)
 #endif // ESP8266
-#else 
+#else
 #define fsDebug(text,...)
 #endif // FAIL_SAFE_DEBUG
 
