@@ -1,7 +1,7 @@
 /**
   * @file FailSafe.cpp
-  * @version 0.1.0
-  * @date 11/11/2020
+  * @version 0.2.0
+  * @date 23/11/2020
   * @author German Martin
   * @brief Library to add a simple fail safe mode to any ESP32 or ESP8266 project
   */
