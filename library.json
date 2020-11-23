@@ -17,6 +17,6 @@
       "url": "https://github.com/gmag11/FailSafeMode.git"
     },
   "examples": "examples/*/*.ino",
-  "license": "GPL-3.0-or-later",
+  "license": "GPL-3.0-or-later"
 }
 
