@@ -168,7 +168,7 @@ void FailSafeClass::checkBoot (int maxBootCycles, int led, uint32_t memOffset) {
     digitalWrite (indicatorLed, HIGH);
 
     if (loadFlag ()) {
-        if (bootFlag.bootCycles >= 3) {
+        if (bootFlag.bootCycles >= maxBootCycles) {
             failSafe = TRIGGERED;
         } else {
             bootFlag.bootCycles++;
