@@ -1,7 +1,7 @@
 /**
   * @file FailSafeMode.ino
-  * @version 0.2.0
-  * @date 23/11/2020
+  * @version 0.2.1
+  * @date 30/11/2020
   * @author German Martin
   * @brief Example on how to use library to add Fail Safe mode to any ESP32 or ESP8266 project
   */
