@@ -1,7 +1,7 @@
 /**
   * @file FailSafe.h
-  * @version 0.2.0
-  * @date 23/11/2020
+  * @version 0.2.1
+  * @date 30/11/2020
   * @author German Martin
   * @brief Library to add a simple fail safe mode to any ESP32 or ESP8266 project
   */
@@ -20,7 +20,7 @@
 #define USE_SPIFFS 1 // Do not modify
 #endif // ESP32
 
-#ifdef ESP8266
+#if defined ESP8266 || __DOXYGEN__
 #define USE_SPIFFS                  1  // Set to 1 to use File System.
                                        // Set to 0 to use RTC memory. Only for ESP8266. Does not work with power off.
 #if !USE_SPIFFS
@@ -47,7 +47,7 @@ const char* extractFileName (const char* path);
 #endif // FAIL_SAFE_DEBUG
 
 
-#if defined ESP32 || defined USE_SPIFFS
+#if defined ESP32 || defined USE_SPIFFS || __DOXYGEN__
 constexpr auto FILENAME = "/failsafe.bin";
 #endif
 
@@ -63,13 +63,13 @@ enum failSafeMode_t {
 };
 
 struct bootFlag_t {
-#if USE_RTC
+#if USE_RTC || __DOXYGEN__
     int32_t crc;        /**< If RTC is used this field is used to check data integrify */
 #endif // USE_RTC
     int32_t bootCycles; /**< Booth cycle counter */
 };
 
-#ifdef ESP8266
+#if defined ESP8266 || __DOXYGEN__
 /**
  * @brief Extract filename fom a path, to use it in debug messages
  * @param path Complete file path

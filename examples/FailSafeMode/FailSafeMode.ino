@@ -27,12 +27,12 @@
 #include <FailSafe.h>
 
 #ifdef ESP32
-#define BUILTIN_LED 5
+#define LED_BUILTIN 5
 #endif
 
 const time_t BOOT_FLAG_TIMEOUT = 10000; // Time in ms to reset flag
 const int MAX_CONSECUTIVE_BOOT = 3; // Number of rapid boot cycles before enabling fail safe mode
-const int LED = BUILTIN_LED; // Number of rapid boot cycles before enabling fail safe mode
+const int LED = LED_BUILTIN; // Number of rapid boot cycles before enabling fail safe mode
 const int RTC_ADDRESS = 0; // If you use RTC memory adjust offset to not overwrite other data
 
 const char* WIFI_SSID = "...";
