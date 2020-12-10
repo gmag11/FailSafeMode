@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['show_5ftime_5fperiod_341',['SHOW_TIME_PERIOD',['../advancedExample_8ino.html#ac6dbd64c4e02d393694fd33a46630cc9',1,'SHOW_TIME_PERIOD():&#160;advancedExample.ino'],['../basicExample_8ino.html#ac6dbd64c4e02d393694fd33a46630cc9',1,'SHOW_TIME_PERIOD():&#160;basicExample.ino']]]
+  ['use_5fspiffs_94',['USE_SPIFFS',['../FailSafe_8h.html#a919a47059774d7b196241ba30710f537',1,'FailSafe.h']]]
 ];

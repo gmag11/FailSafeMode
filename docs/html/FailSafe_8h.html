@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">FailSafeMode
-   &#160;<span id="projectnumber">0.2.1</span>
+   &#160;<span id="projectnumber">0.2.2</span>
    </div>
    <div id="projectbrief">Fail Safe mode implementation for ESP8266 and ESP32 to avoid OTA update problems</div>
   </td>
@@ -71,6 +71,7 @@ $(function() {
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#define-members">Macros</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">FailSafe.h File Reference</div>  </div>
@@ -92,6 +93,8 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
+<tr class="memitem:a919a47059774d7b196241ba30710f537"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FailSafe_8h.html#a919a47059774d7b196241ba30710f537">USE_SPIFFS</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a919a47059774d7b196241ba30710f537"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ffc19a0053629b1717b5d484c3c8b30"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FailSafe_8h.html#a5ffc19a0053629b1717b5d484c3c8b30">FAIL_SAFE_DEBUG</a>&#160;&#160;&#160;0</td></tr>
 <tr class="separator:a5ffc19a0053629b1717b5d484c3c8b30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56783c2c02cff872b27de9d97582d47f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FailSafe_8h.html#a56783c2c02cff872b27de9d97582d47f">fsDebug</a>(text, ...)</td></tr>
@@ -111,8 +114,16 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="separator:af7626c997ede2f8cfb21f49f00e76eb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ae056af70e33c1b506d76cae05bf13a3a"><td class="memItemLeft" align="right" valign="top">const char *IRAM_ATTR&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FailSafe_8h.html#ae056af70e33c1b506d76cae05bf13a3a">extractFileName</a> (const char *path)</td></tr>
+<tr class="memdesc:ae056af70e33c1b506d76cae05bf13a3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract filename fom a path, to use it in debug messages.  <a href="FailSafe_8h.html#ae056af70e33c1b506d76cae05bf13a3a">More...</a><br /></td></tr>
+<tr class="separator:ae056af70e33c1b506d76cae05bf13a3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a5169059b6010ec42b34024a63a639eeb"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FailSafe_8h.html#a5169059b6010ec42b34024a63a639eeb">FILENAME</a> = &quot;/failsafe.bin&quot;</td></tr>
+<tr class="separator:a5169059b6010ec42b34024a63a639eeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82e9dfea517919a769d4fc5315766150"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FailSafe_8h.html#a82e9dfea517919a769d4fc5315766150">PASSWD</a> = &quot;laplacian&quot;</td></tr>
 <tr class="separator:a82e9dfea517919a769d4fc5315766150"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7d630c944efad08a1741d2d1ff594de"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFailSafeClass.html">FailSafeClass</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FailSafe_8h.html#ae7d630c944efad08a1741d2d1ff594de">FailSafe</a></td></tr>
@@ -120,8 +131,8 @@ Variables</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Library to add a simple fail safe mode to any ESP32 or ESP8266 project. </p>
-<dl class="section version"><dt>Version</dt><dd>0.2.0 </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>23/11/2020 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.2.2 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>10/12/2020 </dd></dl>
 <dl class="section author"><dt>Author</dt><dd>German Martin </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="FailSafe_8h_source.html">FailSafe.h</a>.</p>
@@ -223,6 +234,22 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a919a47059774d7b196241ba30710f537"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a919a47059774d7b196241ba30710f537">&#9670;&nbsp;</a></span>USE_SPIFFS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USE_SPIFFS&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="FailSafe_8h_source.html#l00024">24</a> of file <a class="el" href="FailSafe_8h_source.html">FailSafe.h</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="af7626c997ede2f8cfb21f49f00e76eb6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af7626c997ede2f8cfb21f49f00e76eb6">&#9670;&nbsp;</a></span>failSafeMode_t</h2>
@@ -248,6 +275,34 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ae056af70e33c1b506d76cae05bf13a3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae056af70e33c1b506d76cae05bf13a3a">&#9670;&nbsp;</a></span>extractFileName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* IRAM_ATTR extractFileName </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Extract filename fom a path, to use it in debug messages. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Complete file path </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>file name without path </dd></dl>
+
+</div>
+</div>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="ae7d630c944efad08a1741d2d1ff594de"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae7d630c944efad08a1741d2d1ff594de">&#9670;&nbsp;</a></span>FailSafe</h2>
@@ -270,7 +325,31 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Static instance </p>
 
-<p class="definition">Definition at line <a class="el" href="FailSafe_8cpp_source.html#l00276">276</a> of file <a class="el" href="FailSafe_8cpp_source.html">FailSafe.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FailSafe_8cpp_source.html#l00278">278</a> of file <a class="el" href="FailSafe_8cpp_source.html">FailSafe.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a5169059b6010ec42b34024a63a639eeb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5169059b6010ec42b34024a63a639eeb">&#9670;&nbsp;</a></span>FILENAME</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr auto FILENAME = &quot;/failsafe.bin&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="FailSafe_8h_source.html#l00051">51</a> of file <a class="el" href="FailSafe_8h_source.html">FailSafe.h</a>.</p>
 
 </div>
 </div>

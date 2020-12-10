@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">FailSafeMode
-   &#160;<span id="projectnumber">0.2.1</span>
+   &#160;<span id="projectnumber">0.2.2</span>
    </div>
    <div id="projectbrief">Fail Safe mode implementation for ESP8266 and ESP32 to avoid OTA update problems</div>
   </td>
@@ -162,8 +162,8 @@ Protected Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">maxBootCycles</td><td>Number of cycles after device enters in Fail Safe mode </td></tr>
+    <tr><td class="paramname">led</td><td>Indicates Fail Safe mode status. Normally off (= HIGH) </td></tr>
     <tr><td class="paramname">memOffset</td><td>RTC memory offset. This is not used if storage is SPIFFS </td></tr>
-    <tr><td class="paramname">led</td><td>LED to indicate Fail Safe mode status. Normally off (= HIGH) </td></tr>
   </table>
   </dd>
 </dl>
@@ -175,7 +175,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="FailSafe_8cpp_source.html#l00163">163</a> of file <a class="el" href="FailSafe_8cpp_source.html">FailSafe.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FailSafe_8cpp_source.html#l00165">165</a> of file <a class="el" href="FailSafe_8cpp_source.html">FailSafe.cpp</a>.</p>
 
 </div>
 </div>
@@ -204,7 +204,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Internal loop method in fail safe mode. </p>
 
-<p class="definition">Definition at line <a class="el" href="FailSafe_8cpp_source.html#l00249">249</a> of file <a class="el" href="FailSafe_8cpp_source.html">FailSafe.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FailSafe_8cpp_source.html#l00251">251</a> of file <a class="el" href="FailSafe_8cpp_source.html">FailSafe.cpp</a>.</p>
 
 </div>
 </div>
@@ -233,7 +233,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Internal setup method for fail safe mode. </p>
 
-<p class="definition">Definition at line <a class="el" href="FailSafe_8cpp_source.html#l00181">181</a> of file <a class="el" href="FailSafe_8cpp_source.html">FailSafe.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FailSafe_8cpp_source.html#l00183">183</a> of file <a class="el" href="FailSafe_8cpp_source.html">FailSafe.cpp</a>.</p>
 
 </div>
 </div>
@@ -293,6 +293,8 @@ Protected Attributes</h2></td></tr>
 <p>Load last boot counter from storage (RTC or SPIFFS) </p>
 <dl class="section return"><dt>Returns</dt><dd>Save result, false in case of error </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="FailSafe_8cpp_source.html#l00089">89</a> of file <a class="el" href="FailSafe_8cpp_source.html">FailSafe.cpp</a>.</p>
+
 </div>
 </div>
 <a id="ad60b632dfff945c8b3d2e30b772e9e70"></a>
@@ -325,7 +327,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="FailSafe_8cpp_source.html#l00254">254</a> of file <a class="el" href="FailSafe_8cpp_source.html">FailSafe.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FailSafe_8cpp_source.html#l00256">256</a> of file <a class="el" href="FailSafe_8cpp_source.html">FailSafe.cpp</a>.</p>
 
 </div>
 </div>
@@ -354,7 +356,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reset boot counter to 0 and update storage. </p>
 
-<p class="definition">Definition at line <a class="el" href="FailSafe_8cpp_source.html#l00046">46</a> of file <a class="el" href="FailSafe_8cpp_source.html">FailSafe.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FailSafe_8cpp_source.html#l00048">48</a> of file <a class="el" href="FailSafe_8cpp_source.html">FailSafe.cpp</a>.</p>
 
 </div>
 </div>
@@ -383,6 +385,8 @@ Protected Attributes</h2></td></tr>
 
 <p>Save boot flag on persistent storage (RTC or SPIFFS) </p>
 <dl class="section return"><dt>Returns</dt><dd>Save result, false in case of error </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="FailSafe_8cpp_source.html#l00141">141</a> of file <a class="el" href="FailSafe_8cpp_source.html">FailSafe.cpp</a>.</p>
 
 </div>
 </div>
@@ -433,7 +437,7 @@ Protected Attributes</h2></td></tr>
 <p>Converts current status to a char string. </p>
 <dl class="section return"><dt>Returns</dt><dd>Textual Fail Safe mode status </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="FailSafe_8cpp_source.html#l00052">52</a> of file <a class="el" href="FailSafe_8cpp_source.html">FailSafe.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FailSafe_8cpp_source.html#l00054">54</a> of file <a class="el" href="FailSafe_8cpp_source.html">FailSafe.cpp</a>.</p>
 
 </div>
 </div>
