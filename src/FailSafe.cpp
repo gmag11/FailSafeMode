@@ -29,6 +29,7 @@
 
 #include <ArduinoOTA.h>
 
+#if FAIL_SAFE_DEBUG
 const char* IRAM_ATTR extractFileName (const char* path) {
     size_t i = 0;
     size_t pos = 0;
@@ -42,6 +43,7 @@ const char* IRAM_ATTR extractFileName (const char* path) {
     }
     return path + pos;
 }
+#endif // FAIL_SAFE_DEBUG
 
 void FailSafeClass::resetFlag () {
     fsDebug ("Reset flag");
