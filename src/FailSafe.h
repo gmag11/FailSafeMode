@@ -1,7 +1,7 @@
 /**
   * @file FailSafe.h
-  * @version 0.2.1
-  * @date 30/11/2020
+  * @version 0.2.2
+  * @date 10/12/2020
   * @author German Martin
   * @brief Library to add a simple fail safe mode to any ESP32 or ESP8266 project
   */
@@ -118,8 +118,8 @@ class FailSafeClass
      /**
       * @brief Checks if fail safe mode should be activated. This should be called at the beginning of main setup function
       * @param maxBootCycles Number of cycles after device enters in Fail Safe mode
+      * @param led Indicates Fail Safe mode status. Normally off (= HIGH)
       * @param memOffset RTC memory offset. This is not used if storage is SPIFFS
-      * @param led LED to indicate Fail Safe mode status. Normally off (= HIGH)
       */
      void checkBoot (int maxBootCycles = DEFAULT_MAX_BOOT_CYCLES, int led = -1, uint32_t memOffset = DEFAULT_OFFSET);
 
