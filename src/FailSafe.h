@@ -1,7 +1,7 @@
 /**
   * @file FailSafe.h
-  * @version 0.2.2
-  * @date 10/12/2020
+  * @version 0.2.3
+  * @date 18/12/2020
   * @author German Martin
   * @brief Library to add a simple fail safe mode to any ESP32 or ESP8266 project
   */
@@ -15,20 +15,31 @@
 	#include "WProgram.h"
 #endif
 
+#include <ArduinoOTA.h>
+#include "FS.h"
+
+#if !defined FS_USE_FLASH || __DOXYGEN__
+#define FS_USE_FLASH                   0  /**< Set to 1 to use File System. Set to 0 to use RTC memory. Only for ESP8266. Does not work with power off.*/
+#endif // FS_USE_FLASH
+
+#if FS_USE_FLASH || __DOXYGEN__
+#if !defined FS_USE_LITTLEFS || __DOXYGEN__
+#define FS_USE_LITTLEFS                  0  /**< Set to 0 to use SPIFFS (Default). Set to 1 to use LittleFS (Recommended). Only for ESP8266, ESP32 always uses SPIFFS*/
+#endif // FS_USE_LITTLEFS
+#endif // FS_USE_FLASH
+
 #ifdef ESP32
-#undef USE_RTC
-#define USE_SPIFFS 1 // Do not modify
+    #undef FS_USE_FLASH
+    #undef FS_USE_LITTLEFS 
+    #define FS_USE_FLASH 1 // Do not modify
+    #define FS_USE_LITTLEFS 0 // Do not modify
+    #include <SPIFFS.h>
+    #include "Update.h"
 #endif // ESP32
 
-#if defined ESP8266 || __DOXYGEN__
-#define USE_SPIFFS                  1  // Set to 1 to use File System.
-                                       // Set to 0 to use RTC memory. Only for ESP8266. Does not work with power off.
-#if !USE_SPIFFS
-#define USE_RTC 1 // Do not modify
-#endif // !USE_SPIFFS
-#endif // ESP8266
-
-#define FAIL_SAFE_DEBUG 0 // Set to 1 to enable log. If usinf ESP32 you need to set log level to WARN at least
+#ifndef FAIL_SAFE_DEBUG
+#define FAIL_SAFE_DEBUG 0 /**< Set to 1 to enable log. If using ESP32 you need to set core log level to WARN at least */
+#endif
 
 #if FAIL_SAFE_DEBUG
 #ifdef ESP8266
@@ -47,7 +58,7 @@ const char* extractFileName (const char* path);
 #endif // FAIL_SAFE_DEBUG
 
 
-#if defined ESP32 || defined USE_SPIFFS || __DOXYGEN__
+#if defined ESP32 || FS_USE_FLASH || __DOXYGEN__
 constexpr auto FILENAME = "/failsafe.bin";
 #endif
 
@@ -63,9 +74,9 @@ enum failSafeMode_t {
 };
 
 struct bootFlag_t {
-#if USE_RTC || __DOXYGEN__
-    int32_t crc;        /**< If RTC is used this field is used to check data integrify */
-#endif // USE_RTC
+#if !FS_USE_FLASH || __DOXYGEN__
+    uint32_t crc;        /**< If RTC is used this field is used to check data integrify */
+#endif // FS_USE_FLASH
     int32_t bootCycles; /**< Booth cycle counter */
 };
 

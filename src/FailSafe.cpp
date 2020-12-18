@@ -1,7 +1,7 @@
 /**
   * @file FailSafe.cpp
-  * @version 0.2.2
-  * @date 10/12/2020
+  * @version 0.2.3
+  * @date 18/12/2020
   * @author German Martin
   * @brief Library to add a simple fail safe mode to any ESP32 or ESP8266 project
   */
@@ -17,15 +17,20 @@
 #include <ESPmDNS.h>
 #endif
 
-#if defined ESP32 || USE_SPIFFS
+#if defined ESP32 || FS_USE_FLASH
+  #include "FS.h"
   #if defined ESP8266
-    #include "FS.h"
-    #define FAILSAFE_FS SPIFFS
+    #if FS_USE_LITTLEFS
+        #define FAILSAFE_FS LittleFS
+        #include <LittleFS.h>
+    #else
+        #define FAILSAFE_FS SPIFFS
+    #endif // FS_USE_LITTLEFS
   #else
     #include <SPIFFS.h>
     #define FAILSAFE_FS SPIFFS
   #endif // ESP8266
-#endif // ESP32 || USE_SPIFFS
+#endif // ESP32 || FS_USE_FLASH
 
 #include <ArduinoOTA.h>
 
@@ -63,7 +68,7 @@ const char* FailSafeClass::toString () {
     return "";
 }
 
-#if defined ESP8266 && !USE_SPIFFS
+#if defined ESP8266 && !FS_USE_FLASH
 bool FailSafeClass::loadFlag () {
     uint32_t crcCheck;
 
@@ -85,7 +90,7 @@ bool FailSafeClass::loadFlag () {
     }
     return false;
 }
-#elif defined ESP32 || USE_SPIFFS
+#elif defined ESP32 || FS_USE_FLASH
 bool FailSafeClass::loadFlag () {
     if (!FAILSAFE_FS.begin ()) {
         FAILSAFE_FS.format ();
@@ -101,7 +106,7 @@ bool FailSafeClass::loadFlag () {
     }
 
     fsDebug ("Opening %s file", FILENAME);
-    File configFile = SPIFFS.open (FILENAME, "r");
+    File configFile = FAILSAFE_FS.open (FILENAME, "r");
     if (!configFile) {
         fsDebug ("Error opening %s", FILENAME);
         resetFlag ();
@@ -125,7 +130,7 @@ bool FailSafeClass::loadFlag () {
 }
 #endif
 
-#if defined ESP8266 && !USE_SPIFFS
+#if defined ESP8266 && !FS_USE_FLASH
 bool FailSafeClass::saveFlag () {
     bootFlag.crc = crc32 ((uint8_t*)&(bootFlag.bootCycles), sizeof (int32_t));
 
@@ -137,7 +142,7 @@ bool FailSafeClass::saveFlag () {
     }
     return false;
 }
-#elif defined ESP32 || USE_SPIFFS
+#elif defined ESP32 || FS_USE_FLASH
 bool FailSafeClass::saveFlag () {
     //if (!FAILSAFE_FS.begin ()) {
     //    fsDebug ("Error opening FS for saving");
@@ -146,7 +151,7 @@ bool FailSafeClass::saveFlag () {
 
     fsDebug ("Started Filesystem for saving");
 
-    File configFile = SPIFFS.open (FILENAME, "w");
+    File configFile = FAILSAFE_FS.open (FILENAME, "w");
     if (!configFile) {
         fsDebug ("failed to open config file %s for writing", FILENAME);
         return false;
@@ -188,7 +193,7 @@ void FailSafeClass::failSafeModeSetup () {
 #if defined ESP8266
     snprintf (bssid, 30, "ESP_%06X_failsafe", ESP.getChipId ());
 #elif defined ESP32
-    snprintf (bssid, 30, "ESP_%06X_failsafe", (uint32_t)(ESP.getEfuseMac () & (uint64_t)0x0000000000FFFFFF));
+    snprintf (bssid, 30, "esp_%06x_failsafe", (uint32_t)(ESP.getEfuseMac () & (uint64_t)0x0000000000FFFFFF));
 #endif
 
     WiFi.softAP (bssid, PASSWD);
@@ -215,7 +220,7 @@ void FailSafeClass::failSafeModeSetup () {
 
         static time_t lastFlash;
         float ratio = 1 - (float)progress / (float)total;
-        int period = INIT_PERIOD * ratio + PULSE_TIME + 10;
+        unsigned int period = INIT_PERIOD * ratio + PULSE_TIME + 10;
         int state = digitalRead (led) == LOW;
         //fsDebug ("ratio: %f period: %d state: %d\n", ratio, period, state);
         if (!state) { // LED off
@@ -243,7 +248,7 @@ void FailSafeClass::failSafeModeSetup () {
                         });
 
     ArduinoOTA.setHostname (bssid);
-    ArduinoOTA.setPassword (PASSWD);
+    //ArduinoOTA.setPassword (PASSWD);
 
     ArduinoOTA.begin ();
 }

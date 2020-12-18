@@ -1,7 +1,7 @@
 /**
   * @file FailSafeMode.ino
-  * @version 0.2.2
-  * @date 10/12/2020
+  * @version 0.2.3
+  * @date 18/12/2020
   * @author German Martin
   * @brief Example on how to use library to add Fail Safe mode to any ESP32 or ESP8266 project
   */
@@ -14,16 +14,10 @@
 
 #if defined ESP8266
 #include <ESP8266WiFi.h>
-#include <ESP8266mDNS.h>
 #elif defined ESP32
 #include <WiFi.h>
-#include <ESPmDNS.h>
-#include "FS.h"
-#include <SPIFFS.h>
-#include "Update.h"
 #endif
 
-#include <ArduinoOTA.h>
 #include <FailSafe.h>
 
 #ifdef ESP32
