@@ -1,5 +1,7 @@
 # Fail Safe mode library for ESP8266 and ESP32
 
+![platformio](https://github.com/gmag11/FailSafeMode/workflows/platformio/badge.svg?branch=main)
+
 Sometimes you may have a device that can only be updated via OTA or is very difficult to get physical access to it (because it is in an unreachable place). If you try to send a firmware and it has a bug It may happen that it enters on a boot loop or any other condition that breaks OTA support.
 
 It is really inconvenient and may cause that you end up with an unusable device. I'm sure you know what I mean :)
