@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">FailSafeMode
-   &#160;<span id="projectnumber">0.2.1</span>
+   &#160;<span id="projectnumber">0.2.3</span>
    </div>
    <div id="projectbrief">Fail Safe mode implementation for ESP8266 and ESP32 to avoid OTA update problems</div>
   </td>
@@ -75,7 +75,6 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;WProgram.h&quot;</code><br />
-<code>#include &lt;ArduinoOTA.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="FailSafe_8h_source.html">FailSafe.h</a>&gt;</code><br />
 </div>
 <p><a href="FailSafeMode_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -93,7 +92,7 @@ Variables</h2></td></tr>
 <tr class="separator:a00c12add296f0d83ff8d3437e23651c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4fae2891cab0e7811bb5f339d57d213"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FailSafeMode_8cpp.html#ae4fae2891cab0e7811bb5f339d57d213">MAX_CONSECUTIVE_BOOT</a> = 3</td></tr>
 <tr class="separator:ae4fae2891cab0e7811bb5f339d57d213"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a734029c5fc6508cd75bf19cd7f52b66d"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FailSafeMode_8cpp.html#a734029c5fc6508cd75bf19cd7f52b66d">LED</a> = BUILTIN_LED</td></tr>
+<tr class="memitem:a734029c5fc6508cd75bf19cd7f52b66d"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FailSafeMode_8cpp.html#a734029c5fc6508cd75bf19cd7f52b66d">LED</a> = LED_BUILTIN</td></tr>
 <tr class="separator:a734029c5fc6508cd75bf19cd7f52b66d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24a54fae2450856c4bb1fc9337253be1"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FailSafeMode_8cpp.html#a24a54fae2450856c4bb1fc9337253be1">RTC_ADDRESS</a> = 0</td></tr>
 <tr class="separator:a24a54fae2450856c4bb1fc9337253be1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -118,7 +117,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="FailSafeMode_8cpp_source.html#l00069">69</a> of file <a class="el" href="FailSafeMode_8cpp_source.html">FailSafeMode.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FailSafeMode_8cpp_source.html#l00063">63</a> of file <a class="el" href="FailSafeMode_8cpp_source.html">FailSafeMode.cpp</a>.</p>
 
 </div>
 </div>
@@ -137,7 +136,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="FailSafeMode_8cpp_source.html#l00041">41</a> of file <a class="el" href="FailSafeMode_8cpp_source.html">FailSafeMode.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FailSafeMode_8cpp_source.html#l00035">35</a> of file <a class="el" href="FailSafeMode_8cpp_source.html">FailSafeMode.cpp</a>.</p>
 
 </div>
 </div>
@@ -154,7 +153,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="FailSafeMode_8cpp_source.html#l00033">33</a> of file <a class="el" href="FailSafeMode_8cpp_source.html">FailSafeMode.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FailSafeMode_8cpp_source.html#l00027">27</a> of file <a class="el" href="FailSafeMode_8cpp_source.html">FailSafeMode.cpp</a>.</p>
 
 </div>
 </div>
@@ -165,12 +164,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const int LED = BUILTIN_LED</td>
+          <td class="memname">const int LED = LED_BUILTIN</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="FailSafeMode_8cpp_source.html#l00035">35</a> of file <a class="el" href="FailSafeMode_8cpp_source.html">FailSafeMode.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FailSafeMode_8cpp_source.html#l00029">29</a> of file <a class="el" href="FailSafeMode_8cpp_source.html">FailSafeMode.cpp</a>.</p>
 
 </div>
 </div>
@@ -186,7 +185,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="FailSafeMode_8cpp_source.html#l00034">34</a> of file <a class="el" href="FailSafeMode_8cpp_source.html">FailSafeMode.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FailSafeMode_8cpp_source.html#l00028">28</a> of file <a class="el" href="FailSafeMode_8cpp_source.html">FailSafeMode.cpp</a>.</p>
 
 </div>
 </div>
@@ -202,7 +201,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="FailSafeMode_8cpp_source.html#l00036">36</a> of file <a class="el" href="FailSafeMode_8cpp_source.html">FailSafeMode.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FailSafeMode_8cpp_source.html#l00030">30</a> of file <a class="el" href="FailSafeMode_8cpp_source.html">FailSafeMode.cpp</a>.</p>
 
 </div>
 </div>
@@ -218,7 +217,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="FailSafeMode_8cpp_source.html#l00039">39</a> of file <a class="el" href="FailSafeMode_8cpp_source.html">FailSafeMode.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FailSafeMode_8cpp_source.html#l00033">33</a> of file <a class="el" href="FailSafeMode_8cpp_source.html">FailSafeMode.cpp</a>.</p>
 
 </div>
 </div>
@@ -234,7 +233,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="FailSafeMode_8cpp_source.html#l00038">38</a> of file <a class="el" href="FailSafeMode_8cpp_source.html">FailSafeMode.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FailSafeMode_8cpp_source.html#l00032">32</a> of file <a class="el" href="FailSafeMode_8cpp_source.html">FailSafeMode.cpp</a>.</p>
 
 </div>
 </div>
