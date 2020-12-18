@@ -1,8 +1,8 @@
 {
   "name": "FailSafeMode",
   "frameworks": "arduino",
-  "version": "0.2.2",
-  "keywords": "ota, fail",
+  "version": "0.2.3",
+  "keywords": "ota, fail, reboot, bootloop",
   "platforms": ["espressif32", "espressif8266"],
   "description": "Allows implementing fail safe mode as a last resource in case main code fails and OTA update is the most convenient way to load a new program",
   "url": "https://github.com/gmag11/FailSafeMode",
