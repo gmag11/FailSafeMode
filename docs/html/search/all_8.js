@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['max_5fconsecutive_5fboot_53',['MAX_CONSECUTIVE_BOOT',['../FailSafeMode_8cpp.html#ae4fae2891cab0e7811bb5f339d57d213',1,'FailSafeMode.cpp']]]
+  ['off_34',['OFF',['../FailSafe_8h.html#af7626c997ede2f8cfb21f49f00e76eb6aac132f2982b98bcaa3445e535a03ff75',1,'FailSafe.h']]],
+  ['offset_35',['offset',['../classFailSafeClass.html#a0fb837686235cb16299a028a2ee2db32',1,'FailSafeClass']]]
 ];

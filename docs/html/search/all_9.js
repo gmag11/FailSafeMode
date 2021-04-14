@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['off_54',['OFF',['../FailSafe_8h.html#af7626c997ede2f8cfb21f49f00e76eb6aac132f2982b98bcaa3445e535a03ff75',1,'FailSafe.h']]],
-  ['offset_55',['offset',['../classFailSafeClass.html#a0fb837686235cb16299a028a2ee2db32',1,'FailSafeClass']]]
+  ['passwd_36',['PASSWD',['../FailSafe_8h.html#a82e9dfea517919a769d4fc5315766150',1,'FailSafe.h']]],
+  ['pulse_5ftime_37',['PULSE_TIME',['../FailSafe_8cpp.html#ac877c243f61b4d41a089602b62703bef',1,'FailSafe.cpp']]]
 ];

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['certstorebearssl_2ecpp_2ed_6',['CertStoreBearSSL.cpp.d',['../CertStoreBearSSL_8cpp_8d.html',1,'']]],
-  ['checkboot_7',['checkBoot',['../classFailSafeClass.html#ae91f9e4c4c4f4ff3eaac761d61786b08',1,'FailSafeClass']]],
-  ['crc_8',['crc',['../structbootFlag__t.html#a6fe1e9ef8097cf59f936fcaace0255ff',1,'bootFlag_t']]]
+  ['default_5fboot_5fflag_5ftimeout_6',['DEFAULT_BOOT_FLAG_TIMEOUT',['../FailSafe_8h.html#a5e9b3283ef2e086c514a76d0a819d555',1,'FailSafe.h']]],
+  ['default_5fmax_5fboot_5fcycles_7',['DEFAULT_MAX_BOOT_CYCLES',['../FailSafe_8h.html#a322561fdabc342ba5a0eb64b49e16edf',1,'FailSafe.h']]],
+  ['default_5foffset_8',['DEFAULT_OFFSET',['../FailSafe_8h.html#aa352b8dff8aed037dafeee32c55d0395',1,'FailSafe.h']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['failsafeclass_77',['FailSafeClass',['../classFailSafeClass.html',1,'']]]
+  ['failsafeclass_50',['FailSafeClass',['../classFailSafeClass.html',1,'']]]
 ];

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['tostring_65',['toString',['../classFailSafeClass.html#a32e1b633087683e95a86a99c002a57fc',1,'FailSafeClass']]],
-  ['triggered_66',['TRIGGERED',['../FailSafe_8h.html#af7626c997ede2f8cfb21f49f00e76eb6ad3eea51f796ad468a4e1c61401e901b4',1,'FailSafe.h']]]
+  ['wifi_5fpass_47',['WIFI_PASS',['../FailSafeMode_8ino.html#aa0d894a281cd4525d1dad48b1a7161ef',1,'FailSafeMode.ino']]],
+  ['wifi_5fssid_48',['WIFI_SSID',['../FailSafeMode_8ino.html#a586c86c64e7d30517aeee0fe47a25ae4',1,'FailSafeMode.ino']]]
 ];
