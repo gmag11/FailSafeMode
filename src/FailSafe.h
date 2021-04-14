@@ -119,12 +119,12 @@ class FailSafeClass
       */
      void failSafeModeLoop ();
 
+public:
+
      /**
       * @brief Reset boot counter to 0 and update storage
       */
      void resetFlag ();
-
- public:
 
      /**
       * @brief Checks if fail safe mode should be activated. This should be called at the beginning of main setup function
